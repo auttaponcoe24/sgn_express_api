@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model population {
+  id                                         Int     @id @default(autoincrement())
+  Country_name                               String? @map("Country name") @db.Text
+  Year                                       Int?
+  Population                                 Int?
+  Population_of_children_under_the_age_of_1  Int?    @map("Population of children under the age of 1")
+  Population_of_children_under_the_age_of_5  Int?    @map("Population of children under the age of 5")
+  Population_of_children_under_the_age_of_15 Int?    @map("Population of children under the age of 15")
+  Population_under_the_age_of_25             Int?    @map("Population under the age of 25")
+  Population_aged_15_to_64_years             Int?    @map("Population aged 15 to 64 years")
+  Population_older_than_15_years             Int?    @map("Population older than 15 years")
+  Population_older_than_18_years             Int?    @map("Population older than 18 years")
+  Population_at_age_1                        Float?  @map("Population at age 1")
+  Population_aged_1_to_4_years               Int?    @map("Population aged 1 to 4 years")
+  Population_aged_5_to_9_years               Int?    @map("Population aged 5 to 9 years")
+  Population_aged_10_to_14_years             Int?    @map("Population aged 10 to 14 years")
+  Population_aged_15_to_19_years             Int?    @map("Population aged 15 to 19 years")
+  Population_aged_20_to_29_years             Int?    @map("Population aged 20 to 29 years")
+  Population_aged_30_to_39_years             Int?    @map("Population aged 30 to 39 years")
+  Population_aged_40_to_49_years             Int?    @map("Population aged 40 to 49 years")
+  Population_aged_50_to_59_years             Int?    @map("Population aged 50 to 59 years")
+  Population_aged_60_to_69_years             Int?    @map("Population aged 60 to 69 years")
+  Population_aged_70_to_79_years             Int?    @map("Population aged 70 to 79 years")
+  Population_aged_80_to_89_years             Int?    @map("Population aged 80 to 89 years")
+  Population_aged_90_to_99_years             Int?    @map("Population aged 90 to 99 years")
+  Population_older_than_100_years            Int?    @map("Population older than 100 years")
+}
